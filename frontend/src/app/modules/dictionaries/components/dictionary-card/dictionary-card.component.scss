@@ -1,0 +1,46 @@
+.container {
+  border-radius: 1rem;
+  background: var(--dark-gray);
+  padding: 1rem 1.5rem;
+}
+
+.tags {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  padding: 0 0 0.5rem;
+
+  span {
+    background: var(--gray);
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.description {
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  font-size: 0.875rem;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: rgba(169, 169, 169, 1);
+}
+
+.word-count {
+  max-width: 10rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
