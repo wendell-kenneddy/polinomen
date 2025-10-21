@@ -5,6 +5,6 @@ export const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    title: 'Polinomen | Dashboard',
+    title: 'Polinomen | Dicionários',
   },
 ];
