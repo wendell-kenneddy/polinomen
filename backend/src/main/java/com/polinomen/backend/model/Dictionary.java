@@ -4,10 +4,9 @@ import java.time.Instant;
 import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -43,13 +42,17 @@ public class Dictionary {
   @Column(nullable = false)
   private String description;
 
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "dictionary", cascade = { CascadeType.MERGE, CascadeType.REMOVE })
+  private List<Word> words;
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
-  @OnDelete(action = OnDeleteAction.CASCADE)
   private User user;
 
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "dictionary")
-  private List<Word> words;
+  public Dictionary setWords(List<Word> words) {
+    this.words = words;
+    return this;
+  }
 
   @CreationTimestamp
   private Instant createdAt;
