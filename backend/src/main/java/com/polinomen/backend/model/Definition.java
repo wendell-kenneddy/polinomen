@@ -3,8 +3,6 @@ package com.polinomen.backend.model;
 import java.time.Instant;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
@@ -37,7 +35,6 @@ public class Definition {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "word_id")
-  @OnDelete(action = OnDeleteAction.CASCADE)
   private Word word;
 
   @Column(nullable = false)
