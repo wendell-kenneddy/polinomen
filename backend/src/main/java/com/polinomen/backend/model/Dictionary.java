@@ -49,11 +49,6 @@ public class Dictionary {
   @JoinColumn(name = "user_id")
   private User user;
 
-  public Dictionary setWords(List<Word> words) {
-    this.words = words;
-    return this;
-  }
-
   @CreationTimestamp
   private Instant createdAt;
 

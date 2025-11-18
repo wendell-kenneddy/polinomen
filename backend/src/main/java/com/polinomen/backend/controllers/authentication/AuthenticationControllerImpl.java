@@ -1,4 +1,4 @@
-package com.polinomen.backend.controllers;
+package com.polinomen.backend.controllers.authentication;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,10 +9,10 @@ import com.polinomen.backend.dtos.requests.SignupRequest;
 import com.polinomen.backend.services.authentication.IAuthenticationService;
 
 @RestController
-public class AuthenticationController {
+public class AuthenticationControllerImpl implements IAuthenticationController {
   private IAuthenticationService authenticationService;
 
-  public AuthenticationController(IAuthenticationService authenticationService) {
+  public AuthenticationControllerImpl(IAuthenticationService authenticationService) {
     this.authenticationService = authenticationService;
   }
 

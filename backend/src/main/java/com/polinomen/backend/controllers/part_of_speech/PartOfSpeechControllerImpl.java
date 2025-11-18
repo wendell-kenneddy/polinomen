@@ -1,4 +1,4 @@
-package com.polinomen.backend.controllers;
+package com.polinomen.backend.controllers.part_of_speech;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import com.polinomen.backend.dtos.requests.AddPartOfSpeechToWordRequest;
 import com.polinomen.backend.services.part_of_speech.IPartOfSpeechService;
 
 @RestController
-public class PartOfSpeechController {
+public class PartOfSpeechControllerImpl implements IPartOfSpeechController {
   private final IPartOfSpeechService partOfSpeechService;
 
-  public PartOfSpeechController(IPartOfSpeechService partOfSpeechService) {
+  public PartOfSpeechControllerImpl(IPartOfSpeechService partOfSpeechService) {
     this.partOfSpeechService = partOfSpeechService;
   }
 

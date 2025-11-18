@@ -1,4 +1,4 @@
-package com.polinomen.backend.controllers;
+package com.polinomen.backend.controllers.definition;
 
 import java.util.List;
 
@@ -16,10 +16,10 @@ import com.polinomen.backend.dtos.requests.UpdateDefinitionRequest;
 import com.polinomen.backend.services.definition.IDefinitionService;
 
 @RestController
-public class DefinitionsController {
+public class DefinitionControllerImpl implements IDefinitionController {
   private final IDefinitionService definitionsService;
 
-  public DefinitionsController(IDefinitionService definitionsService) {
+  public DefinitionControllerImpl(IDefinitionService definitionsService) {
     this.definitionsService = definitionsService;
   }
 

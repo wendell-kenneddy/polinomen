@@ -1,4 +1,4 @@
-package com.polinomen.backend.controllers;
+package com.polinomen.backend.controllers.word;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.polinomen.backend.controllers;
+package com.polinomen.backend.controllers.dictionary;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ import com.polinomen.backend.dtos.requests.UpdateDictionaryRequest;
 import com.polinomen.backend.services.dictionary.IDictionaryService;
 
 @RestController
-public class DictionaryController {
+public class DictionaryControllerImpl implements IDictionaryController {
   private IDictionaryService dictionaryService;
 
-  public DictionaryController(IDictionaryService dictionaryService) {
+  public DictionaryControllerImpl(IDictionaryService dictionaryService) {
     this.dictionaryService = dictionaryService;
   }
 

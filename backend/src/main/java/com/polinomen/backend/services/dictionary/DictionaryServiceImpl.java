@@ -42,7 +42,7 @@ public class DictionaryServiceImpl implements IDictionaryService {
     Dictionary dictionary = this.dictionaryRepository
         .findById(dictionaryId)
         .orElseThrow(() -> new EntityNotFoundException("Dictionary not found."));
-    return this.dictionaryMapper.entityToDTO(dictionary.setWords(List.of()));
+    return this.dictionaryMapper.entityToDTO(dictionary);
   }
 
   public List<DictionaryDTO> getAllDictionaries(Authentication authentication) {

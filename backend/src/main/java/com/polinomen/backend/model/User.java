@@ -50,13 +50,4 @@ public class User {
 
   @UpdateTimestamp
   private Instant updatedAt;
-
-  public void setDictionaries(List<Dictionary> dictionaries) {
-    this.dictionaries = dictionaries;
-  }
-
-  public void addDictionary(Dictionary dictionary) {
-    this.dictionaries.add(dictionary);
-  }
-
 }

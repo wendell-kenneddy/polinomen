@@ -1,4 +1,4 @@
-package com.polinomen.backend.controllers;
+package com.polinomen.backend.controllers.user;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,10 +8,10 @@ import com.polinomen.backend.dtos.UserDTO;
 import com.polinomen.backend.services.user.IUserService;
 
 @RestController
-public class UserController {
+public class UserControllerImpl implements IUserController {
   private final IUserService userService;
 
-  public UserController(IUserService userService) {
+  public UserControllerImpl(IUserService userService) {
     this.userService = userService;
   }
 
