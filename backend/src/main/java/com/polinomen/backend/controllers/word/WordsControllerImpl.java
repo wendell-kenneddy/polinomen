@@ -2,7 +2,6 @@ package com.polinomen.backend.controllers.word;
 
 import java.util.List;
 
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,16 +17,15 @@ import com.polinomen.backend.dtos.requests.UpdateWordRequest;
 import com.polinomen.backend.services.word.IWordService;
 
 @RestController
-public class WordsController {
+public class WordsControllerImpl {
   private final IWordService wordService;
 
-  public WordsController(IWordService wordService) {
+  public WordsControllerImpl(IWordService wordService) {
     this.wordService = wordService;
   }
 
   @PostMapping("/dictionaries/{dictionaryId}/words")
   public String createWord(
-      Authentication authentication,
       @PathVariable String dictionaryId,
       @RequestBody CreateWordRequest request) {
     return this.wordService.createWord(dictionaryId, request);
@@ -52,5 +50,4 @@ public class WordsController {
   public void deleteWord(@PathVariable String wordId) {
     this.wordService.deleteWord(wordId);
   }
-
 }
